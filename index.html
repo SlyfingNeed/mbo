@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Carbon Emission Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Landing Page -->
+    <section id="landing">
+        <h1>Welcome to the Carbon Emission Calculator</h1>
+        <p>Calculate the carbon emission of your vehicle and make environmentally friendly choices.</p>
+        <button onclick="showCalculator()">Go to Calculator</button>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="hidden">
+        <div class="question" id="question1">
+            <h2>Question 1: What is your vehicle type?</h2>
+            <select id="vehicleType" onchange="scrollToNextQuestion()">
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="truck">Truck</option>
+            </select>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+
+        <div class="question" id="question2">
+            <h2>Question 2: How many miles do you drive per week?</h2>
+            <input type="number" id="mileage" placeholder="Enter miles" oninput="scrollToNextQuestion()">
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+
+        <div class="question" id="question3">
+            <h2>Question 3: What is your vehicle's fuel efficiency (in miles per gallon)?</h2>
+            <input type="number" id="fuelEfficiency" placeholder="Enter MPG" oninput="scrollToNextQuestion()">
+            <button onclick="calculateCarbon()">Calculate</button>
+        </div>
+    </section>
+
+
+    <!-- Result Section -->
+    <section id="result" class="hidden">
+        <h2>Your Carbon Emission:</h2>
+        <p id="carbonResult">-</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
