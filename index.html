@@ -19,7 +19,7 @@
         </div>
       <ul>
         <li><a href="index.html" id="home-link">Home</a></li>
-        <li><a href="calculate" id="calculate-link">Calculate</a></li>
+        <li><a href="calculate.html" id="calculate-link">Calculate</a></li>
         <li><a href="reference" id="reference-link">Reference</a></li>
       </ul>
 
@@ -34,36 +34,26 @@
 
   <main>
     <section class="landing-page">
-        <img src="landing-img.png" class="landing-img">
+      <img src="landing-img.png" class="landing-img">
             <div class="content">
-            <h1 class="h1-landing">Know Your <br><span>Emission</span></h1>
-            <P>Prabowo adalah calon presiden yang akan mebawa indonesia menjadi negara yang merdeka, berdaulat, adil dan makmur. 1 buka kotak pemilu 2 coblos 3 tutup kotak</p>
-              <button id="showCalculatorBtn">Calculate Carbon Emission</button>    
-                <div class="flex flex-row">
-                    <div>01</div>
-                    <div>02</div>
-                    <div>03</div>
-                </div>  
-            </div>
+
+            <h1 class="h1-landing">Start a better future by <br><span>knowing your Emission</span></h1>
+            <P>Committing to a change is a must, by possessing a knowledge towards your vehicle carbon emission, you contribute towards a better ecogreen future by able to reduce and using more efficient use</p>
+
+              <button href="calculate.html" class="text-black font-bold py-2 px-4 rounded">
+                Calculate Now!
+              </button>
+                
+          </div>
+         
     </section>
 
-    <div id="calculatorSection" style="display: none;">
-      <h2>Carbon Emission Calculator</h2>
-      <form id="carbonCalculatorForm">
-        <label for="vehicleType">What is your vehicle?</label>
-        <select id="vehicleType">
-          <option value="car">Car</option>
-          <option value="bike">Bike</option>
-          <!-- Add more options as needed -->
-        </select>
-        <label for="distanceToSchool">How long does it take you to school (in km)?</label>
-        <input type="number" id="distanceToSchool" placeholder="Enter distance in km" required>
-        <button type="submit">Calculate</button>
-      </form>
-      <div id="resultSection" style="display: none;">
-        <p id="carbonResult"></p>
+    <section id="dyk">
+      <div class="flex">
       </div>
-    </div>
+    </section>
+
+    
 
   </main>
 
