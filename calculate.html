@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Grandstander&family=Patrick+Hand&family=Playpen+Sans:wght@700&display=swap" rel="stylesheet">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="styles1.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -33,27 +33,34 @@
       </header>
     
       <main>
-        <section id="CalculatorSection" class="Calculator">
-          <h2 class="flex flex-row items-center mt-5">Calculate Vehicle Carbon Emissions</h2>
-          <form id="carbonForm">
-            <label for="distance">Distance Travelled (in km):</label>
-            <input type="number" id="distance" name="distance" required><br><br>
-            
-            <label for="fuelType">Fuel Type:</label>
-            <select id="fuelType" name="fuelType" required>
-              <option value="petrol">Petrol</option>
-              <option value="diesel">Diesel</option>
-              <option value="cng">CNG</option>
-              <option value="electric">Electric</option>
-            </select><br><br>
-            
-            <label for="fuelConsumed">Fuel Consumed (in liters or equivalent for electric):</label>
-            <input type="number" id="fuelConsumed" name="fuelConsumed" required><br><br>
-            
-            <button type="button" onclick="calculateEmissions()">Calculate Emissions</button>
-          </form>
+        <section id="calculator">
+            <div class="question" id="question1">
+              <h2>Question 1: What is your vehicle type?</h2>
+              <select id="vehicleType">
+                  <option value="car">Car (Petrol)</option>
+                  <option value="car-d">Car (Diesel)</option>
+                  <option value="bus">Bus</option>
+                  <option value="motor">Motor</option>
+                  <option value="car-e">car-e</option>
+              </select>
+          </div>
 
-  <div id="result"></div>       
+          <div class="question" id="question2">
+              <h2>How long does it takes to your school</h2>
+              <input type="number" id="mileage" placeholder="Enter kilometer">
+          </div>
+
+          <div class="question" id="question3">
+              <button onclick="calculateCarbon()">Calculate</button>
+          </div>
+
+          <section id="result" class="hidden">
+            <h2>Your Carbon Emission:</h2>
+            <p id="carbonResult">-</p>
+            <P>That is equivalent to </P>
+           </section>
+
+
         </section>
       </main>
     <script src="script1.js"></script>
