@@ -34,19 +34,34 @@
     
       <main>
         <section id="calculator">
+
+              <div class="question" id="question-name">
+                <h2>What is your name?</h2>
+                <input type="character" id="name" placeholder="Your Name">
+              </div>
+              
+              <div class="question" id="question-grade">
+                <h2>What grade are you on?</h2>
+                <select id="grade">
+                    <option value="g-1">Grade 1</option>
+                    <option value="g-2">Grade 2</option>
+                    <option value="g-3">Grade 3</option>
+                </select>
+            </div>
+
             <div class="question" id="question1">
-              <h2>Question 1: What is your vehicle type?</h2>
+              <h2>What type of vehicle you use to school?</h2>
               <select id="vehicleType">
                   <option value="car">Car (Petrol)</option>
                   <option value="car-d">Car (Diesel)</option>
                   <option value="bus">Bus</option>
-                  <option value="motor">Motor</option>
-                  <option value="car-e">car-e</option>
+                  <option value="motor">Motorcycle</option>
+                  <option value="car-e">car (electric)</option>
               </select>
           </div>
 
           <div class="question" id="question2">
-              <h2>How long does it takes to your school</h2>
+              <h2>How long does it takes to your school? (in KM)</h2>
               <input type="number" id="mileage" placeholder="Enter kilometer">
           </div>
 
@@ -55,9 +70,11 @@
           </div>
 
           <section id="result" class="hidden">
-            <h2>Your Carbon Emission:</h2>
+            <h2>Your Carbon Emission per day is</h2>
             <p id="carbonResult">-</p>
             <P>That is equivalent to </P>
+            <p id="treeEqui">-</p>
+            <canvas id="treeIllus"></canvas>
            </section>
 
 

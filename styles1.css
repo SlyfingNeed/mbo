@@ -37,3 +37,7 @@ button {
     margin-top: 10px;
     cursor: pointer;
 }
+
+.question question-name {
+    margin-top: 5px;
+}

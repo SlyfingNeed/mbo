@@ -28,15 +28,35 @@ function getCurrentQuestionNumber() {
 function calculateCarbon() {
   const vehicleType = document.getElementById('vehicleType').value;
   const mileage = parseFloat(document.getElementById('mileage').value);
-  const fuelEfficiency = 1;
   const tree=65;
 
-  const carbonEmission = (mileage / fuelEfficiency * tree) * getCarbonFactor(vehicleType);
+  const carbonEmission = (mileage / getCarbonFactor(vehicleType) * tree) ;
+  const treeEqui = carbonEmission * tree / 10;
 
   // Display result
   document.getElementById('result').classList.remove('hidden');
   document.getElementById('carbonResult').textContent = carbonEmission.toFixed(1) + ' g  CO2';
+  document.getElementById('treeEqui').textContent = treeEqui.toFixed(1) + '%';
 }
+
+function treeIllus() {
+  const img = new Image();
+  img.onload = function () {
+      const canvas = document.getElementById('outputCanvas');
+      const ctx = canvas.getContext('2d');
+
+      const percentage = document.getElementById('percentage').value;
+      const width = img.width * (percentage / 100);
+      const height = img.height * (percentage / 100);
+
+      canvas.width = width;
+      canvas.height = height;
+
+      ctx.drawImage(img, 0, 0, width, height, 0, 0, width, height);
+  };
+  img.src = 'tree1.png'; // Replace with your image path
+}
+
 
 function getCarbonFactor(vehicleType) {
   // You might replace this with actual carbon factors based on vehicle type
